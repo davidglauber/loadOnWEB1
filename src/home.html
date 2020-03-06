@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>loadOn | Descubra o melhor</title>
+            <link rel='stylesheet' type='text/css' media='screen' href='./styles/home.css'>
+            <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+
+        <body>
+            <header class="header-fixed">
+                <div class="header-limiter">
+                    <a href="#" id="titlesite"> loadOn... </a>
+                    <nav>
+                        <a href="#" class="selected">Home</a>
+                        <i class="fa fa-search" color="green" style="color: #8699e4; font-weight: bold;"></i>
+                    </nav>
+                </div>
+            </header>
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+
+                $(document).ready(function(){
+
+                    var showHeaderAt = 150;
+
+                    var win = $(window),
+                            body = $('body');
+
+
+                    if(win.width() > 600){
+
+                        win.on('scroll', function(e){
+
+                            if(win.scrollTop() > showHeaderAt) {
+                                body.addClass('fixed');
+                            }
+                            else {
+                                body.removeClass('fixed');
+                            }
+                        });
+
+                    }
+
+                });
+
+            </script>
+
+                <div style="flex-direction: column;">
+                    <div style="display: flex; flex-direction: row;">
+                        <span class="textRandom" style="margin-left: 100px; margin-top: 70px; font-size: 20px; ">Show Random Videos</span>
+                    </div>
+                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 10px;" width="45%" height="340" src="https://www.youtube.com/embed/PkkV1vLHUvQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 10px;" width="30%" height="280" src="http://www.youtube.com/embed/IsBInsOj8TY?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 100px;" width="35%" height="180" src="https://www.youtube.com/embed/lYEDShTcZXc?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 100px;" width="40%" height="280" src="https://www.youtube.com/embed/XZ19SS6pwQQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 100px;" width="35%" height="180" src="https://www.youtube.com/embed/PkkV1vLHUvQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 100px;" width="40%" height="280" src="http://www.youtube.com/embed/IsBInsOj8TY?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 100px;" width="35%" height="180" src="https://www.youtube.com/embed/PkkV1vLHUvQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 100px;" width="40%" height="280" src="http://www.youtube.com/embed/IsBInsOj8TY?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                </div>
+        </body>
+    </html>
