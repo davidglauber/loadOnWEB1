@@ -151,3 +151,22 @@ body {
 	height: 1500px;
 	background-color: whitesmoke;
 }
+
+
+article { 
+	display: flex;
+	align-items: center;
+	padding: 8px 12px;
+	margin-left: 200px;
+	cursor: pointer;
+}
+
+
+.thumb {
+	height: 70px;
+	border-radius: 10px;
+}
+
+.details {
+	padding: 8px 22px;
+}

@@ -65,9 +65,9 @@
                     /*lê a API do youtube e retorna os vídeos*/
                     function loadVids() {
                         $.getJSON(URL, options, function(data) {
-                            console.log(data)
                             var id = data.items[0].snippet.resourceId.videoId;
                             mainVid(id);
+                            resultsLoop(data);
                         })
                     }
 
@@ -84,18 +84,42 @@
                             allowfullscreen></iframe>
                         `)
                     }
+
+
+                    function resultsLoop(data){
+                        $.each(data.items, function(i, item) {
+
+                            var thumb = item.snippet.thumbnails.medium.url;
+                            var title = item.snippet.title;
+                            var desc = item.snippet.description;
+                            var vid = item.snippet.resourceId.videoId;
+
+                            $('main').append(`
+                                <article class="item" data-key="${vid}">
+                                    <img class="thumb" src="${thumb}" alt=""/>
+                                    <div class= "details">
+                                        <h4>${title}</h4>
+                                        <p>${desc}</p>
+                                    </div>
+                                </article>
+                            `);
+                        })
+                    }
+
+                    $('main').on('click', 'article', function() {
+                        var id = $(this).attr('data-key');
+                        mainVid(id);
+                    });
                     
 
                 });
             </script>
-
                 <div id="video" style="flex-direction: column;">
-
-                    <div style="display: flex; flex-direction: row;">
-                        <span class="textRandom" style="margin-left: 100px; margin-top: 70px; font-size: 20px; ">Show Random Videos</span>
-                    </div>
-                       
-                    
+                        <div style="display: flex; flex-direction: row;">
+                            <span class="textRandom" style="margin-left: 100px; margin-top: 70px; font-size: 20px; ">Show Random Videos</span>
+                        </div>
                 </div>
+
+                <main></main>
         </body>
     </html>
