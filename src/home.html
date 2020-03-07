@@ -6,6 +6,7 @@
             <link rel='stylesheet' type='text/css' media='screen' href='./styles/home.css'>
             <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         </head>
 
         <body>
@@ -19,7 +20,6 @@
                 </div>
             </header>
 
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script>
 
                 $(document).ready(function(){
@@ -47,23 +47,54 @@
                 });
 
             </script>
+            <script>
+                $(document).ready(function() {
+                    var key = 'AIzaSyCmXyHtGFRGTTMmI_a5aQrkmi5jEvFpBcI';
+                    var playlistId = 'PLKSD8UK-Sfa_c56yJf7fk_3AaGnIcwT90';
+                    var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
-                <div style="flex-direction: column;">
+                    var options = {
+                        part: 'snippet',
+                        key: key,
+                        maxResults: 20,
+                        playlistId: playlistId
+                    }
+
+                    loadVids();
+
+                    /*lê a API do youtube e retorna os vídeos*/
+                    function loadVids() {
+                        $.getJSON(URL, options, function(data) {
+                            console.log(data)
+                            var id = data.items[0].snippet.resourceId.videoId;
+                            mainVid(id);
+                        })
+                    }
+
+
+                    function mainVid(id) {
+                        $('#video').html(`
+                            <iframe 
+                            style="margin-left: 100px; border-radius: 20px; margin-top: 10px; box-shadow: 5px 5px 15px black" 
+                            width="45%" 
+                            height="340" 
+                            src="https://www.youtube.com/embed/${id}?color=white" 
+                            frameborder="0" allow="accelerometer; autoplay; 
+                            encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                        `)
+                    }
+                    
+
+                });
+            </script>
+
+                <div id="video" style="flex-direction: column;">
+
                     <div style="display: flex; flex-direction: row;">
                         <span class="textRandom" style="margin-left: 100px; margin-top: 70px; font-size: 20px; ">Show Random Videos</span>
                     </div>
-                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 10px;" width="45%" height="340" src="https://www.youtube.com/embed/PkkV1vLHUvQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 10px;" width="30%" height="280" src="http://www.youtube.com/embed/IsBInsOj8TY?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 100px;" width="35%" height="180" src="https://www.youtube.com/embed/lYEDShTcZXc?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 100px;" width="40%" height="280" src="https://www.youtube.com/embed/XZ19SS6pwQQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 100px;" width="35%" height="180" src="https://www.youtube.com/embed/PkkV1vLHUvQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 100px;" width="40%" height="280" src="http://www.youtube.com/embed/IsBInsOj8TY?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                        <iframe style="margin-left: 100px; border-radius: 20px; margin-top: 100px;" width="35%" height="180" src="https://www.youtube.com/embed/PkkV1vLHUvQ?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe style="margin-left: 50px; border-radius: 20px; margin-top: 100px;" width="40%" height="280" src="http://www.youtube.com/embed/IsBInsOj8TY?color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       
                     
                 </div>
         </body>
