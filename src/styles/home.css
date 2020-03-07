@@ -1,6 +1,6 @@
 .header-fixed {
-	background-color: white;
-	box-shadow: 0px 10px 35px rgba(165, 153, 153, 0.473);
+	background-color: rgba(85, 85, 85, 0.897);
+	box-shadow: 0px 10px 35px rgb(136, 255, 0);
 	padding: 20px 40px;
 	height: 80px;
 	color: #ffffff;
@@ -25,7 +25,7 @@
 .header-fixed #titlesite {
 	position: relative;
 	margin-right: 80%;
-	color: #8699e4;
+	color: yellow;
 	font-weight: bold;
 	font-size: 28px;
 }
@@ -46,7 +46,7 @@
 }
 
 .header-fixed .header-limiter h1 span {
-	color: #8699e4;
+	color: yellow;
 }
 
 /* The navigation links */
@@ -57,7 +57,7 @@
 }
 
 .textRandom:hover {
-	color:#8699e4;
+	color:yellow;
 	cursor: pointer;
 }
 
@@ -73,7 +73,7 @@
 	padding: 0 5px;
 	text-decoration:none;
 	font-weight: bold;
-	color: #8699e4;
+	color: yellow;
 	opacity: 0.9;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .header-fixed .header-limiter nav a.selected {
-	color: #8699e4;
+	color: yellow;
 	pointer-events: none;
 	opacity: 1;
 }
@@ -149,7 +149,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 1500px;
-	background-color: whitesmoke;
+	background-color: rgba(85, 85, 85, 0.897);
 }
 
 
@@ -157,10 +157,16 @@ article {
 	display: flex;
 	align-items: center;
 	padding: 8px 12px;
-	margin-left: 200px;
+	margin-left: 100px;
+	margin-right: 20px;
 	cursor: pointer;
+	
 }
 
+article:hover{
+	border-radius: 20px;
+	box-shadow: 0px 1px 35px black;
+}
 
 .thumb {
 	height: 70px;
@@ -169,4 +175,18 @@ article {
 
 .details {
 	padding: 8px 22px;
+}
+
+#titulo {
+	color: yellow;
+}
+
+#videoTitulo {
+	margin-left: 200px;
+	font-size: 100px;
+	color: rgb(209, 209, 7);
+}
+
+html{ 
+	scroll-behavior: smooth;
 }

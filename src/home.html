@@ -15,7 +15,7 @@
                     <a href="#" id="titlesite"> loadOn... </a>
                     <nav>
                         <a href="#" class="selected">Home</a>
-                        <i class="fa fa-search" color="green" style="color: #8699e4; font-weight: bold;"></i>
+                        <i class="fa fa-search" color="green" style="color: yellow; font-weight: bold;"></i>
                     </nav>
                 </div>
             </header>
@@ -75,6 +75,7 @@
                     function mainVid(id) {
                         $('#video').html(`
                             <iframe 
+                            id="frame"
                             style="margin-left: 100px; border-radius: 20px; margin-top: 10px; box-shadow: 5px 5px 15px black" 
                             width="45%" 
                             height="340" 
@@ -82,6 +83,10 @@
                             frameborder="0" allow="accelerometer; autoplay; 
                             encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen></iframe>
+
+
+                            <i id="videoTitulo" class="fa fa-thumbs-up"><i/>
+                            <i style="margin-left: 100px; font-size: 100px; color: rgb(209, 209, 7);" class="fa fa-thumbs-down"><i/>
                         `)
                     }
 
@@ -95,13 +100,17 @@
                             var vid = item.snippet.resourceId.videoId;
 
                             $('main').append(`
-                                <article class="item" data-key="${vid}">
-                                    <img class="thumb" src="${thumb}" alt=""/>
-                                    <div class= "details">
-                                        <h4>${title}</h4>
-                                        <p>${desc}</p>
-                                    </div>
-                                </article>
+                                <a id="referNav" href="#frame">
+                                    <article style="margin-top: 30px" class="item" data-key="${vid}">
+                                        <img class="thumb" src="${thumb}" alt=""/>
+                                        <div class= "details">
+                                            <h4 id="titulo">${title}</h4>
+                                                <div style="flex-direction:'row'">
+                                                    <p style="color: #fff">${desc}</p>
+                                                </div>
+                                        </div>
+                                    </article>
+                                </a>
                             `);
                         })
                     }
@@ -114,10 +123,7 @@
 
                 });
             </script>
-                <div id="video" style="flex-direction: column;">
-                        <div style="display: flex; flex-direction: row;">
-                            <span class="textRandom" style="margin-left: 100px; margin-top: 70px; font-size: 20px; ">Show Random Videos</span>
-                        </div>
+                <div id="video" style="display: flex; flex-direction: row; align-items: center;">
                 </div>
 
                 <main></main>
