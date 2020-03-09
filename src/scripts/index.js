@@ -60,7 +60,7 @@
 
 
                 <i id="videoTitulo" class="fa fa-thumbs-up"><i/>
-                <i style="margin-left: 100px; font-size: 100px; color: rgb(209, 209, 7);" class="fa fa-thumbs-down"><i/>
+                <i style="margin-left: 100px; font-size: 100px; color: blue;" class="fa fa-thumbs-down"><i/>
             `)
         }
 
@@ -80,7 +80,7 @@
                             <div class= "details">
                                 <h4 id="titulo">${title}</h4>
                                     <div style="flex-direction:'row'">
-                                        <p style="color: #fff">${desc}</p>
+                                        <p style="color: blue">${desc}</p>
                                     </div>
                             </div>
                         </article>
