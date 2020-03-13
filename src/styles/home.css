@@ -1,6 +1,6 @@
 .header-fixed {
 	background-color: white;
-	box-shadow: 0px 2px 10px blue;
+	box-shadow: 0px 2px 10px red;
 	padding: 20px 40px;
 	height: 80px;
 	color: red;
@@ -25,7 +25,7 @@
 .header-fixed #titlesite {
 	position: relative;
 	margin-right: 80%;
-	color: blue;
+	color: red;
 	font-weight: bold;
 	font-size: 28px;
 }
@@ -46,18 +46,18 @@
 }
 
 .header-fixed .header-limiter h1 span {
-	color: blue;
+	color: red;
 }
 
 /* The navigation links */
 
 .header-fixed .header-limiter a {
-	color: blue;
+	color: red;
 	text-decoration: none;
 }
 
 .textRandom:hover {
-	color:yellow;
+	color:red;
 	cursor: pointer;
 }
 
@@ -73,7 +73,7 @@
 	padding: 0 5px;
 	text-decoration:none;
 	font-weight: bold;
-	color: blue;
+	color: red;
 	opacity: 0.9;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .header-fixed .header-limiter nav a.selected {
-	color: blue;
+	color: red;
 	pointer-events: none;
 	opacity: 1;
 }
@@ -177,14 +177,18 @@ article:hover{
 	padding: 8px 22px;
 }
 
-#titulo {
-	color: blue;
+#tituloTTT {
+	text-decoration: none;
+}
+
+#subtitle{
+	text-decoration: none;
 }
 
 #videoTitulo {
 	margin-left: 200px;
 	font-size: 100px;
-	color: blue;
+	color: red;
 }
 
 html{ 

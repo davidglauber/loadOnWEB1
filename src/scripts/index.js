@@ -46,6 +46,15 @@
         }
 
 
+        function like() {
+            alert('vc gostou do video')
+        }
+
+        function unlike() {
+            alert('vc não gostou do video')
+        }
+
+
         function mainVid(id) {
             $('#video').html(`
                 <iframe 
@@ -54,13 +63,14 @@
                 width="45%" 
                 height="340" 
                 src="https://www.youtube.com/embed/${id}?color=white" 
-                frameborder="0" allow="accelerometer; autoplay; 
+                frameborder="4" allow="accelerometer; autoplay; 
                 encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen></iframe>
 
 
-                <i id="videoTitulo" class="fa fa-thumbs-up"><i/>
-                <i style="margin-left: 100px; font-size: 100px; color: blue;" class="fa fa-thumbs-down"><i/>
+                
+                <i onclick="like()" id="videoTitulo" class="fa fa-thumbs-up"><i/>
+                <i  onclick="unlike()" style="margin-left: 100px; font-size: 100px; color: red;" class="fa fa-thumbs-down"><i/>
             `)
         }
 
@@ -78,10 +88,8 @@
                         <article style="margin-top: 30px" class="item" data-key="${vid}">
                             <img class="thumb" src="${thumb}" alt=""/>
                             <div class= "details">
-                                <h4 id="titulo">${title}</h4>
-                                    <div style="flex-direction:'row'">
-                                        <p style="color: blue">${desc}</p>
-                                    </div>
+                                <h4 id="tituloTTT">${title}</h4>
+                                        <p id="subtitle" >${desc}</p>
                             </div>
                         </article>
                     </a>
